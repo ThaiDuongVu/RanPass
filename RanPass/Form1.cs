@@ -10,16 +10,105 @@ using System.Windows.Forms;
 
 namespace RanPass
 {
-    public partial class Form1 : Form
+    public partial class RanPass : Form
     {
-        public Form1()
+        private string password;
+        private string passwordBase;
+
+        private string lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+        private string upperCaseLetters = "ABCDEFGHIJKLMNOPQRTSUVWXYZ";
+
+        private string numbers = "1234567890";
+        private string specialCharacters = "!@#$%^&*(){}[]:;<>,.?~";
+
+        private int passwordLength;
+        private const int passwordLengthMax = 40;
+        private const int passwordLengthMin = 1;
+
+        private bool passwordGenerated;
+
+        private Random random = new Random();
+
+        public RanPass()
         {
             InitializeComponent();
         }
 
         private void generateButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Yo password generated");
+            if (int.TryParse(lengthBox.Text, out passwordLength))
+            {
+                passwordLength = Convert.ToInt32(lengthBox.Text);
+
+                if (passwordLength <= passwordLengthMax && passwordLength > 0)
+                {
+                    GeneratePassword();
+                }
+
+                if (passwordLength > passwordLengthMax)
+                {
+                    passwordBox.Text = "Password cannot be longer than " + passwordLengthMax.ToString() + " characters";
+                }
+                if (passwordLength < passwordLengthMin)
+                {
+                    passwordBox.Text = "Password must have at least one character";
+                }
+            }
+            else
+            {
+                passwordBox.Text = "Please enter a valid length";
+            }
+        }
+
+        private void GeneratePassword()
+        {
+            password = "";
+            passwordBase = "";
+
+            if (lowerCaseCheckBox.Checked)
+            {
+                passwordBase += lowerCaseLetters;
+            }
+            if (upperCaseCheckBox.Checked)
+            {
+                passwordBase += upperCaseLetters;
+            }
+            if (numberCheckBox.Checked)
+            {
+                passwordBase += numbers;
+            }
+            if (specialCharacterCheckBox.Checked)
+            {
+                passwordBase += specialCharacters;
+            }
+
+            if (lowerCaseCheckBox.Checked || upperCaseCheckBox.Checked || numberCheckBox.Checked || specialCharacterCheckBox.Checked)
+            {
+                for (int i = 1; i <= passwordLength; i++)
+                {
+                    password += passwordBase[random.Next(0, passwordBase.Length - 1)];
+                }
+
+                passwordBox.Text = password;
+                passwordGenerated = true;
+            }
+            else
+            {
+                passwordBox.Text = "Please check at least one box above";
+            }
+        }
+
+        private void copyButton_Click(object sender, EventArgs e)
+        {
+            if (passwordGenerated)
+            {
+                Clipboard.SetText(password);
+                MessageBox.Show("Password copied");
+            }
+            else
+            {
+                MessageBox.Show("Password not generated!");
+            }
         }
     }
 }

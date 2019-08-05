@@ -1,6 +1,6 @@
 ﻿namespace RanPass
 {
-    partial class Form1
+    partial class RanPass
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.passwordLengthLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lengthBox = new System.Windows.Forms.TextBox();
             this.lowerCaseLabel = new System.Windows.Forms.Label();
             this.lowerCaseCheckBox = new System.Windows.Forms.CheckBox();
             this.upperCaseLabel = new System.Windows.Forms.Label();
@@ -39,36 +39,37 @@
             this.specialCharacterLabel = new System.Windows.Forms.Label();
             this.specialCharacterCheckBox = new System.Windows.Forms.CheckBox();
             this.generateButton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.passwordBox = new System.Windows.Forms.TextBox();
+            this.copyButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // passwordLengthLabel
             // 
             this.passwordLengthLabel.AutoSize = true;
-            this.passwordLengthLabel.Font = new System.Drawing.Font("Calibri", 14F);
+            this.passwordLengthLabel.Font = new System.Drawing.Font("Calibri", 13F);
             this.passwordLengthLabel.Location = new System.Drawing.Point(13, 13);
             this.passwordLengthLabel.Name = "passwordLengthLabel";
             this.passwordLengthLabel.Padding = new System.Windows.Forms.Padding(8);
-            this.passwordLengthLabel.Size = new System.Drawing.Size(244, 39);
+            this.passwordLengthLabel.Size = new System.Drawing.Size(229, 38);
             this.passwordLengthLabel.TabIndex = 0;
             this.passwordLengthLabel.Text = "How long is your password?";
             // 
-            // textBox1
+            // lengthBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 14F);
-            this.textBox1.Location = new System.Drawing.Point(388, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 30);
-            this.textBox1.TabIndex = 1;
+            this.lengthBox.Font = new System.Drawing.Font("Calibri", 14F);
+            this.lengthBox.Location = new System.Drawing.Point(358, 20);
+            this.lengthBox.Name = "lengthBox";
+            this.lengthBox.Size = new System.Drawing.Size(100, 30);
+            this.lengthBox.TabIndex = 1;
             // 
             // lowerCaseLabel
             // 
             this.lowerCaseLabel.AutoSize = true;
-            this.lowerCaseLabel.Font = new System.Drawing.Font("Calibri", 14F);
+            this.lowerCaseLabel.Font = new System.Drawing.Font("Calibri", 13F);
             this.lowerCaseLabel.Location = new System.Drawing.Point(13, 53);
             this.lowerCaseLabel.Name = "lowerCaseLabel";
             this.lowerCaseLabel.Padding = new System.Windows.Forms.Padding(8);
-            this.lowerCaseLabel.Size = new System.Drawing.Size(374, 39);
+            this.lowerCaseLabel.Size = new System.Drawing.Size(354, 38);
             this.lowerCaseLabel.TabIndex = 2;
             this.lowerCaseLabel.Text = "Does your password have lower case letters?";
             // 
@@ -76,7 +77,7 @@
             // 
             this.lowerCaseCheckBox.AutoSize = true;
             this.lowerCaseCheckBox.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lowerCaseCheckBox.Location = new System.Drawing.Point(421, 62);
+            this.lowerCaseCheckBox.Location = new System.Drawing.Point(393, 61);
             this.lowerCaseCheckBox.Name = "lowerCaseCheckBox";
             this.lowerCaseCheckBox.Padding = new System.Windows.Forms.Padding(8);
             this.lowerCaseCheckBox.Size = new System.Drawing.Size(31, 30);
@@ -86,11 +87,11 @@
             // upperCaseLabel
             // 
             this.upperCaseLabel.AutoSize = true;
-            this.upperCaseLabel.Font = new System.Drawing.Font("Calibri", 14F);
+            this.upperCaseLabel.Font = new System.Drawing.Font("Calibri", 13F);
             this.upperCaseLabel.Location = new System.Drawing.Point(12, 93);
             this.upperCaseLabel.Name = "upperCaseLabel";
             this.upperCaseLabel.Padding = new System.Windows.Forms.Padding(8);
-            this.upperCaseLabel.Size = new System.Drawing.Size(376, 39);
+            this.upperCaseLabel.Size = new System.Drawing.Size(354, 38);
             this.upperCaseLabel.TabIndex = 4;
             this.upperCaseLabel.Text = "Does your password have upper case letters?";
             // 
@@ -98,7 +99,7 @@
             // 
             this.upperCaseCheckBox.AutoSize = true;
             this.upperCaseCheckBox.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upperCaseCheckBox.Location = new System.Drawing.Point(421, 102);
+            this.upperCaseCheckBox.Location = new System.Drawing.Point(393, 101);
             this.upperCaseCheckBox.Name = "upperCaseCheckBox";
             this.upperCaseCheckBox.Padding = new System.Windows.Forms.Padding(8);
             this.upperCaseCheckBox.Size = new System.Drawing.Size(31, 30);
@@ -108,11 +109,11 @@
             // numberLabel
             // 
             this.numberLabel.AutoSize = true;
-            this.numberLabel.Font = new System.Drawing.Font("Calibri", 14F);
+            this.numberLabel.Font = new System.Drawing.Font("Calibri", 13F);
             this.numberLabel.Location = new System.Drawing.Point(10, 133);
             this.numberLabel.Name = "numberLabel";
             this.numberLabel.Padding = new System.Windows.Forms.Padding(8);
-            this.numberLabel.Size = new System.Drawing.Size(308, 39);
+            this.numberLabel.Size = new System.Drawing.Size(288, 38);
             this.numberLabel.TabIndex = 6;
             this.numberLabel.Text = "Does your password have numbers?";
             // 
@@ -120,7 +121,7 @@
             // 
             this.numberCheckBox.AutoSize = true;
             this.numberCheckBox.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberCheckBox.Location = new System.Drawing.Point(421, 142);
+            this.numberCheckBox.Location = new System.Drawing.Point(393, 137);
             this.numberCheckBox.Name = "numberCheckBox";
             this.numberCheckBox.Padding = new System.Windows.Forms.Padding(8);
             this.numberCheckBox.Size = new System.Drawing.Size(31, 30);
@@ -130,11 +131,11 @@
             // specialCharacterLabel
             // 
             this.specialCharacterLabel.AutoSize = true;
-            this.specialCharacterLabel.Font = new System.Drawing.Font("Calibri", 14F);
+            this.specialCharacterLabel.Font = new System.Drawing.Font("Calibri", 13F);
             this.specialCharacterLabel.Location = new System.Drawing.Point(10, 172);
             this.specialCharacterLabel.Name = "specialCharacterLabel";
             this.specialCharacterLabel.Padding = new System.Windows.Forms.Padding(8);
-            this.specialCharacterLabel.Size = new System.Drawing.Size(376, 39);
+            this.specialCharacterLabel.Size = new System.Drawing.Size(356, 38);
             this.specialCharacterLabel.TabIndex = 8;
             this.specialCharacterLabel.Text = "Does your password have special characters?";
             // 
@@ -142,7 +143,7 @@
             // 
             this.specialCharacterCheckBox.AutoSize = true;
             this.specialCharacterCheckBox.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.specialCharacterCheckBox.Location = new System.Drawing.Point(421, 181);
+            this.specialCharacterCheckBox.Location = new System.Drawing.Point(393, 180);
             this.specialCharacterCheckBox.Name = "specialCharacterCheckBox";
             this.specialCharacterCheckBox.Padding = new System.Windows.Forms.Padding(8);
             this.specialCharacterCheckBox.Size = new System.Drawing.Size(31, 30);
@@ -151,11 +152,9 @@
             // 
             // generateButton
             // 
-            this.generateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.generateButton.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generateButton.Location = new System.Drawing.Point(194, 235);
+            this.generateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.generateButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generateButton.Location = new System.Drawing.Point(177, 222);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(100, 45);
             this.generateButton.TabIndex = 10;
@@ -163,22 +162,34 @@
             this.generateButton.UseVisualStyleBackColor = true;
             this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
             // 
-            // textBox2
+            // passwordBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(115, 303);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 32);
-            this.textBox2.TabIndex = 11;
-            this.textBox2.Text = "Password";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passwordBox.Font = new System.Drawing.Font("Calibri", 13F);
+            this.passwordBox.Location = new System.Drawing.Point(12, 286);
+            this.passwordBox.Name = "passwordBox";
+            this.passwordBox.Size = new System.Drawing.Size(340, 29);
+            this.passwordBox.TabIndex = 11;
+            this.passwordBox.Text = "Password";
+            this.passwordBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Form1
+            // copyButton
+            // 
+            this.copyButton.Font = new System.Drawing.Font("Calibri", 13F);
+            this.copyButton.Location = new System.Drawing.Point(358, 282);
+            this.copyButton.Name = "copyButton";
+            this.copyButton.Size = new System.Drawing.Size(100, 35);
+            this.copyButton.TabIndex = 12;
+            this.copyButton.Text = "Copy";
+            this.copyButton.UseVisualStyleBackColor = true;
+            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
+            // 
+            // RanPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 450);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(470, 400);
+            this.Controls.Add(this.copyButton);
+            this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.specialCharacterCheckBox);
             this.Controls.Add(this.specialCharacterLabel);
@@ -188,9 +199,11 @@
             this.Controls.Add(this.upperCaseLabel);
             this.Controls.Add(this.lowerCaseCheckBox);
             this.Controls.Add(this.lowerCaseLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lengthBox);
             this.Controls.Add(this.passwordLengthLabel);
-            this.Name = "Form1";
+            this.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "RanPass";
             this.Text = "Ran Pass";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,7 +213,7 @@
         #endregion
 
         private System.Windows.Forms.Label passwordLengthLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox lengthBox;
         private System.Windows.Forms.Label lowerCaseLabel;
         private System.Windows.Forms.CheckBox lowerCaseCheckBox;
         private System.Windows.Forms.Label upperCaseLabel;
@@ -210,7 +223,8 @@
         private System.Windows.Forms.Label specialCharacterLabel;
         private System.Windows.Forms.CheckBox specialCharacterCheckBox;
         private System.Windows.Forms.Button generateButton;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox passwordBox;
+        private System.Windows.Forms.Button copyButton;
     }
 }
 
