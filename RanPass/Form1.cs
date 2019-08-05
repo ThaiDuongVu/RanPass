@@ -16,5 +16,10 @@ namespace RanPass
         {
             InitializeComponent();
         }
+
+        private void generateButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Yo password generated");
+        }
     }
 }
