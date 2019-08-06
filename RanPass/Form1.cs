@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace RanPass
 {
@@ -25,7 +26,8 @@ namespace RanPass
         private const int passwordLengthMax = 40;
         private const int passwordLengthMin = 1;
 
-        private bool passwordGenerated;
+        private bool passwordGenerated = false;
+        private string hint;
 
         private Random random = new Random();
 
@@ -104,6 +106,27 @@ namespace RanPass
             {
                 Clipboard.SetText(password);
                 MessageBox.Show("Password copied");
+            }
+            else
+            {
+                MessageBox.Show("Password not generated!");
+            }
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            if (passwordGenerated)
+            {
+                string projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                hint = hintBox.Text;
+
+                StreamWriter streamWriter = new StreamWriter(projectDirectory + "\\passwords.txt");
+                if (streamWriter != null)
+                {
+                    streamWriter.WriteLine(hint + " : " + password);
+                    streamWriter.Close();
+                    MessageBox.Show("Password saved");
+                }
             }
             else
             {

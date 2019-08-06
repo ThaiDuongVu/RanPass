@@ -41,6 +41,8 @@
             this.generateButton = new System.Windows.Forms.Button();
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.copyButton = new System.Windows.Forms.Button();
+            this.hintBox = new System.Windows.Forms.TextBox();
+            this.saveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // passwordLengthLabel
@@ -154,7 +156,7 @@
             // 
             this.generateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.generateButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generateButton.Location = new System.Drawing.Point(177, 222);
+            this.generateButton.Location = new System.Drawing.Point(185, 224);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(100, 45);
             this.generateButton.TabIndex = 10;
@@ -183,11 +185,34 @@
             this.copyButton.UseVisualStyleBackColor = true;
             this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
             // 
+            // hintBox
+            // 
+            this.hintBox.Font = new System.Drawing.Font("Calibri", 13F);
+            this.hintBox.Location = new System.Drawing.Point(12, 333);
+            this.hintBox.Name = "hintBox";
+            this.hintBox.Size = new System.Drawing.Size(340, 29);
+            this.hintBox.TabIndex = 13;
+            this.hintBox.Text = "Hint\r\n";
+            this.hintBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // saveButton
+            // 
+            this.saveButton.Font = new System.Drawing.Font("Calibri", 13F);
+            this.saveButton.Location = new System.Drawing.Point(358, 329);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(100, 35);
+            this.saveButton.TabIndex = 14;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.save_Click);
+            // 
             // RanPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 400);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.hintBox);
             this.Controls.Add(this.copyButton);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.generateButton);
@@ -225,6 +250,8 @@
         private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Button copyButton;
+        private System.Windows.Forms.TextBox hintBox;
+        private System.Windows.Forms.Button saveButton;
     }
 }
 
