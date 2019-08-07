@@ -192,7 +192,7 @@
             this.hintBox.Name = "hintBox";
             this.hintBox.Size = new System.Drawing.Size(340, 29);
             this.hintBox.TabIndex = 13;
-            this.hintBox.Text = "Hint\r\n";
+            this.hintBox.Text = "Hint";
             this.hintBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // saveButton
