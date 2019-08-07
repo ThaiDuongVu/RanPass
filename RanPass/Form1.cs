@@ -120,11 +120,15 @@ namespace RanPass
                 string projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
                 hint = hintBox.Text;
 
+                string existingText = File.ReadAllText(projectDirectory + "\\passwords.txt");
                 StreamWriter streamWriter = new StreamWriter(projectDirectory + "\\passwords.txt");
+
                 if (streamWriter != null)
                 {
+                    streamWriter.Write(existingText);
                     streamWriter.WriteLine(hint + " : " + password);
                     streamWriter.Close();
+
                     MessageBox.Show("Password saved");
                 }
             }
