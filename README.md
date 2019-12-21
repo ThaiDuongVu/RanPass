@@ -1,2 +1,2 @@
 # RanPass
-A random password generator.
+A random password generator with advanced controls.
