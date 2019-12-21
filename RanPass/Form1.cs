@@ -20,7 +20,7 @@ namespace RanPass
         private string upperCaseLetters = "ABCDEFGHIJKLMNOPQRTSUVWXYZ";
 
         private string numbers = "1234567890";
-        private string specialCharacters = "!@#$%^&*(){}[]:;<>,.?~";
+        private string specialCharacters = "!@#$%^&*(){}[]:;<>,.?~/|`-_";
 
         private int passwordLength;
         private const int passwordLengthMax = 40;
@@ -36,33 +36,33 @@ namespace RanPass
             InitializeComponent();
         }
 
-        private void generateButton_Click(object sender, EventArgs e)
+        private void generateButton_Click(object sender, EventArgs e)   // Call if generate button is clicked
         {
             if (int.TryParse(lengthBox.Text, out passwordLength))
             {
                 passwordLength = Convert.ToInt32(lengthBox.Text);
 
-                if (passwordLength <= passwordLengthMax && passwordLength > 0)
+                if (passwordLength <= passwordLengthMax && passwordLength > 0)  // Generate password if all the requirements are satisfied
                 {
                     GeneratePassword();
                 }
 
-                if (passwordLength > passwordLengthMax)
+                if (passwordLength > passwordLengthMax)     // Print a warning if desired password length is too long
                 {
                     passwordBox.Text = "Password cannot be longer than " + passwordLengthMax.ToString() + " characters";
                 }
-                if (passwordLength < passwordLengthMin)
+                if (passwordLength < passwordLengthMin)     // Print a warning if desired password length is less than 1
                 {
                     passwordBox.Text = "Password must have at least one character";
                 }
             }
-            else
+            else    // Print a warning if the input is not an integer
             {
                 passwordBox.Text = "Please enter a valid length";
             }
         }
 
-        private void GeneratePassword()
+        private void GeneratePassword()     // Generate a string of random characters
         {
             password = "";
             passwordBase = "";
@@ -94,13 +94,13 @@ namespace RanPass
                 passwordBox.Text = password;
                 passwordGenerated = true;
             }
-            else
+            else    // Print a warning if none of the boxes are checked
             {
                 passwordBox.Text = "Please check at least one box above";
             }
         }
 
-        private void copyButton_Click(object sender, EventArgs e)
+        private void copyButton_Click(object sender, EventArgs e)   // Copy generated password to the clipboard if a password is generated
         {
             if (passwordGenerated)
             {
@@ -113,7 +113,7 @@ namespace RanPass
             }
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void save_Click(object sender, EventArgs e)     // Save the password with hint to a txt file if a password is generated
         {
             if (passwordGenerated)
             {
